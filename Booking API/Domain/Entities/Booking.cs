@@ -1,5 +1,8 @@
 ﻿namespace Booking_API.Domain.Entities
 {
+    /// <summary>
+    /// Represents a booking in the booking system, including its properties, associated room, and selected services.
+    /// </summary>
     public class Booking
     {
         public Guid Id { get; set; }
