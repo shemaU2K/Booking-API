@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Booking_API</RootNamespace>
+    <RootNamespace>BookingAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

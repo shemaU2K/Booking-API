@@ -1,19 +1,19 @@
-﻿using Booking_API.Domain.Entities;
-using Booking_API.Infrastructure;
-using Booking_API.Application.Rooms.Command.DTOs;
+﻿using BookingAPI.Domain.Entities;
+using BookingAPI.Infrastructure;
+using BookingAPI.Application.Rooms.Command.DTOs;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Booking_API.Application.Rooms.Command
+namespace BookingAPI.Application.Rooms.Command
 {
     /// <summary>
     /// Represents a command to update an existing room in the booking system, including its properties and associated services.
     /// </summary>
     public class UpdateRoomCommand : IRequest<Unit>
     {
-        public Guid Id { get; set; }
-        public int Capacity { get; set; }
-        public decimal BasePrice { get; set; }
+        public Guid Id { get; set; } = Guid.Empty;
+        public int Capacity { get; set; } = 1;
+        public decimal BasePrice { get; set; } = 0.0m;
         public List<ServiceDto> Services { get; set; } = new();
     }
 

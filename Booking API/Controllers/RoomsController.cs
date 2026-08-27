@@ -1,6 +1,6 @@
-﻿using Booking_API.Application.Rooms.Command;
-using Booking_API.Application.Rooms.Commands;
-using Booking_API.Application.Rooms.Queries;
+﻿using BookingAPI.Application.Rooms.Command;
+using BookingAPI.Application.Rooms.Commands;
+using BookingAPI.Application.Rooms.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

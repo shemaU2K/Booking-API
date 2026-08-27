@@ -1,9 +1,9 @@
-﻿using Booking_API.Domain.Entities;
-using Booking_API.Infrastructure;
-using Booking_API.Application.Rooms.Command.DTOs;
+﻿using BookingAPI.Domain.Entities;
+using BookingAPI.Infrastructure;
+using BookingAPI.Application.Rooms.Command.DTOs;
 using MediatR;
 
-namespace Booking_API.Application.Rooms.Commands;
+namespace BookingAPI.Application.Rooms.Commands;
 
 /// <summary>
 /// Represents a command to add a new room to the booking system, including its properties and associated services.
@@ -11,8 +11,8 @@ namespace Booking_API.Application.Rooms.Commands;
 public class AddRoomCommand : IRequest<Guid>
 {
     public string Name { get; set; } = string.Empty;
-    public int Capacity { get; set; }
-    public decimal BasePrice { get; set; }
+    public int Capacity { get; set; } = 1;
+    public decimal BasePrice { get; set; } = 0.0m;
     public List<ServiceDto> Services { get; set; } = new();
 }
 

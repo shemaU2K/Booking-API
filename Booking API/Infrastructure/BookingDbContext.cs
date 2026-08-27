@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Booking_API.Domain.Entities;
+using BookingAPI.Domain.Entities;
 
-namespace Booking_API.Infrastructure
+namespace BookingAPI.Infrastructure
 {
     /// <summary>
     /// Represents the database context for the booking system, providing access to the Rooms, RoomServices, and Bookings tables.

@@ -1,19 +1,19 @@
 ﻿using BookingAPI.Domain.Services;
-using Booking_API.Domain.Entities;
-using Booking_API.Infrastructure;
+using BookingAPI.Domain.Entities;
+using BookingAPI.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Booking_API.Application.Rooms.Commands;
+namespace BookingAPI.Application.Rooms.Commands;
 
 /// <summary>
 /// Represents a command to book a room in the booking system, including the room ID, booking time range, and selected services.
 /// </summary>
 public class BookRoomCommand : IRequest<BookingResponseDto>
 {
-    public Guid RoomId { get; set; }
-    public DateTime StartTime { get; set; }
-    public DateTime EndTime { get; set; }
+    public Guid RoomId { get; set; } = Guid.Empty;
+    public DateTime StartTime { get; set; } = DateTime.MinValue;
+    public DateTime EndTime { get; set; } = DateTime.MinValue;
     public List<Guid> SelectedServiceIds { get; set; } = new();
 }
 

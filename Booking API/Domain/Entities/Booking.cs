@@ -1,4 +1,4 @@
-﻿namespace Booking_API.Domain.Entities
+﻿namespace BookingAPI.Domain.Entities
 {
     /// <summary>
     /// Represents a booking in the booking system, including its properties, associated room, and selected services.

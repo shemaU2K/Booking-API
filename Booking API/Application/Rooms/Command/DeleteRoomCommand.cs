@@ -1,7 +1,7 @@
-﻿using Booking_API.Infrastructure;
+﻿using BookingAPI.Infrastructure;
 using MediatR;
 
-namespace Booking_API.Application.Rooms.Commands;
+namespace BookingAPI.Application.Rooms.Commands;
 
 /// <summary>
 /// Represents a command to delete an existing room from the booking system based on its unique identifier (ID).

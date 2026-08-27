@@ -1,17 +1,17 @@
-﻿using Booking_API.Infrastructure;
+﻿using BookingAPI.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Booking_API.Application.Rooms.Queries;
+namespace BookingAPI.Application.Rooms.Queries;
 
 /// <summary>
 /// Represents a query to search for available rooms based on specified criteria.
 /// </summary>
 public class SearchAvailableRoomsQuery : IRequest<List<RoomResultDto>>
 {
-    public DateTime StartTime { get; set; }
-    public DateTime EndTime { get; set; }
-    public int Capacity { get; set; }
+    public DateTime StartTime { get; set; } = DateTime.Now;
+    public DateTime EndTime { get; set; } = DateTime.Now.AddHours(1);
+    public int Capacity { get; set; } = 1;
 }
 
 /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Booking_API.Application.Rooms.Command.DTOs
+﻿namespace BookingAPI.Application.Rooms.Command.DTOs
 {
      /// <summary>
      /// Represents a data transfer object (DTO) for a service associated with a room, including its name and price.
