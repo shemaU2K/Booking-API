@@ -46,6 +46,8 @@ namespace Booking_API.Controllers
         /// <param name="command"></param>
         /// <returns></returns>
         [HttpPut("{id:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateRoom(Guid id, [FromBody] UpdateRoomCommand command)
         {
             command.Id = id;
@@ -59,6 +61,8 @@ namespace Booking_API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteRoom(Guid id)
         {
             await mediator.Send(new DeleteRoomCommand { Id = id });

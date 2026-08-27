@@ -27,6 +27,8 @@ public class ReportsController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpGet("revenue-by-room")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> GetRevenueByRoom()
     {
         var report = await _context.Rooms
