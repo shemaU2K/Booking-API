@@ -16,6 +16,10 @@ namespace Booking_API.Infrastructure
         public DbSet<RoomService> RoomServices { get; set; }
         public DbSet<Booking> Bookings { get; set; }
 
+        /// <summary>
+        /// Configures the model relationships and properties for the Room, RoomService, and Booking entities in the database context.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
