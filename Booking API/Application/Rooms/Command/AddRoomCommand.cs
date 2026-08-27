@@ -1,5 +1,6 @@
 ﻿using Booking_API.Domain.Entities;
 using Booking_API.Infrastructure;
+using Booking_API.Application.Rooms.Command.DTOs;
 using MediatR;
 
 namespace Booking_API.Application.Rooms.Commands;
@@ -13,15 +14,6 @@ public class AddRoomCommand : IRequest<Guid>
     public int Capacity { get; set; }
     public decimal BasePrice { get; set; }
     public List<ServiceDto> Services { get; set; } = new();
-}
-
-/// <summary>
-/// Represents a data transfer object (DTO) for a service associated with a room, including its name and price.
-/// </summary>
-public class ServiceDto
-{
-    public string Name { get; set; } = string.Empty;
-    public decimal Price { get; set; }
 }
 
 /// <summary>
