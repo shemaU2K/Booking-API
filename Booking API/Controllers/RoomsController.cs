@@ -31,6 +31,8 @@ namespace Booking_API.Controllers
         /// <param name="command"></param>
         /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> CreateRoom([FromBody] AddRoomCommand command)
         {
             var roomId = await mediator.Send(command);
@@ -69,6 +71,8 @@ namespace Booking_API.Controllers
         /// <param name="query"></param>
         /// <returns></returns>
         [HttpGet("available")]
+        [ProducesResponseType(typeof(List<RoomResultDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> SearchAvailableRooms([FromQuery] SearchAvailableRoomsQuery query)
         {
             var rooms = await mediator.Send(query);
@@ -82,6 +86,9 @@ namespace Booking_API.Controllers
         /// <param name="command"></param>
         /// <returns></returns>
         [HttpPost("{id:guid}/book")]
+        [ProducesResponseType(typeof(BookingResponseDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> BookRoom(Guid id, [FromBody] BookRoomCommand command)
         {
             command.RoomId = id;
