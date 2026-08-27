@@ -31,6 +31,9 @@ public class PricingCalculator : IPricingCalculator
             {
                 multiplier = 0.9m;
             }
+            // Пікові години (12:00-14:00) перекривають стандартні (09:00-18:00), 
+            // тому перевірка на пікові години повинна йти вище за ієрархією умов, 
+            // щоб коректно застосувати націнку 15%.
             else if (hourOfDay >= 12 && hourOfDay < 14)
             {
                 multiplier = 1.15m;
